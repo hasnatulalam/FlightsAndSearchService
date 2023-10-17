@@ -21,13 +21,22 @@ class CityRepository{
         throw{error}
     }
    }
-   async updateCity(cityId,{data}){
+   async updateCity(cityId,data){
     try {
-       const city =await City.update(data,{
+        //The below  approach also works but will not return update object
+        //if we are using pg  then returning true  can be used else not
+      /*  const city =await City.update(data,{
         where:{
             id:cityId
-        }
-       }) 
+        },
+        returning:true,
+        plain:true
+       }) */ 
+       //For getting update data in mysql we use below approach
+       const city =await City.findByPk(cityId);
+       city.name=data.name;
+       await city.save()
+
        return city;
     } catch (error) {
         throw{error} 
@@ -41,6 +50,14 @@ class CityRepository{
       } catch (error) {
         throw{error}
       }
+   }
+   async getAllCities(){
+    try {
+       const cities =await City.findAll() 
+       return cities;
+    } catch (error) {
+        throw{error}
+    }
    }
 }
 module.exports=CityRepository;
