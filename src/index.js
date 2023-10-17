@@ -14,8 +14,7 @@ const setupStartServer =async ()=>{
     console.log(`server started at ${PORT}`)
 
     const repo=new CityRepository();
-    
-    repo.createCity({name:"New Delhi"});
+    repo.deleteCity(1);
   })
 }
 
