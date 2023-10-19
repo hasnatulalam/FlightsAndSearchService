@@ -15,42 +15,42 @@ module.exports = {
     await queryInterface.bulkInsert('Airports',[
     {
       name:'Kempegowda International Airport Bengaluru',
-      cityId:7,
+      cityId:2,
       createdAt:new Date(),
       updatedAt:new Date()
 
     },
     {
       name:'Hindustan Aeronautics Limited Airport',
-      cityId:7,
+      cityId:2,
       createdAt:new Date(),
       updatedAt:new Date()
 
     },
     {
       name:'HAL Airport',
-      cityId:7,
+      cityId:2,
       createdAt:new Date(),
       updatedAt:new Date()
 
     },
     {
       name:'Airport Bangalore',
-      cityId:7,
+      cityId:2,
       createdAt:new Date(),
       updatedAt:new Date()
 
     },
     {
       name:'Mysuru Airport',
-      cityId:7,
+      cityId:2,
       createdAt:new Date(),
       updatedAt:new Date()
 
     },
     {
       name:'Mangaluru International Airport',
-      cityId:7,
+      cityId:2,
       createdAt:new Date(),
       updatedAt:new Date()
 
@@ -86,6 +86,6 @@ module.exports = {
      * Example:
      * await queryInterface.bulkDelete('People', null, {});
      */
-    
+    await queryInterface.bulkDelete('Airports', null, {});
   }
 };
