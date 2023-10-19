@@ -40,8 +40,8 @@ npx sequelize db:migrate
     Relationship -> City has many airports and Airport belongs to a city (one to many)
 
 npx sequelize model:generate --name Airport --attributes name:String,address:String,cityId:integer
+npx sequelize db:migrate
 
 npx sequelize seed:generate --name add-airports
 npx sequelize db:seed:all
-
-select \* from Airports Join Cities on Airports.cityId=Cities.id where Cities.id=7;
+select \* from Airports Join Cities on Airports.cityId=Cities.id where Cities.id=2;

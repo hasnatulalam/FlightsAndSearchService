@@ -2,7 +2,7 @@ const express =require("express");
 const bodyParser=require("body-parser");
 const { PORT }=require('./config/serverConfig');
 const ApiRoutes=require('./routes/index');
-const {Airport,City}=require('./models/index')
+const {Airplane}=require('./models/index')
 const db =require('./models/index')
 
 
@@ -22,6 +22,7 @@ const setupStartServer =async ()=>{
           if(process.env.SYNC_DB){
             db.sequelize.sync({ alter: true });
           }
+         
           
       
    
